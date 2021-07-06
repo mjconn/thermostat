@@ -7,11 +7,40 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/5aca13155e.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <section>
-      <h1 id="current-temp"></h1>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div class="card text-center">
+              <h1 class="card-header">
+                Thermostat
+              </h1>
+              <div class="card-body">
+                <h2 id="current-temp" class="display-2 card-title mb-3"></h2>
+                <div class="btn-group" role="group" aria-label="Temperature controls">
+                  <button id='temp-up' type="button" class="btn btn-outline-primary"><i class="fas fa-plus"></i></button>
+                  <button id='temp-down' type="button" class="btn btn-outline-primary"><i class="fas fa-minus"></i></button>
+                  <button id='temp-reset' type="button" class="btn btn-outline-primary"><i class="fas fa-redo"></i></button>
+                </div>
+                <p class="card-text mt-5">Power Saving Mode is <span id='power-saving-status'>on</span></p>
+                <div class="btn-group" role="group" aria-label="Power Saving mode controls">
+                  <input type="radio" class="btn-check" name="btnradio" id="power-saver-on" autocomplete="off" checked>
+                  <label class="btn btn-outline-primary" for="power-saver-on">On</label>
+                
+                  <input type="radio" class="btn-check" name="btnradio" id="power-saver-off" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="power-saver-off">Off</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+     
+      <!-- <h1 id="current-temp"></h1>
       <p>
         <button id='temp-up'><i class="fas fa-plus"></i></button>
         <button id='temp-down'><i class="fas fa-minus"></i></button>
@@ -19,8 +48,11 @@
         Power Saving Mode is <span id='power-saving-status'>on</span>
         <button id='power-saver-on'>On</button>
         <button id='power-saver-off'>Off</button>
-      </p>
+      </p> -->
     </section>
     <script src="src/thermostat.js"></script>
+    <script src="src/interface.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
   </body>
 </html>
