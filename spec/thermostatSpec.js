@@ -62,4 +62,12 @@ describe('Thermostat', () => {
       expect(thermostat.getCurrentTemp()).toEqual(32);
     });
   });
+
+  it('allows reset to default temp', () => {
+    for(let i = 0; i < 6; i++) {
+      thermostat.up();
+    }
+    thermostat.reset();
+    expect(thermostat.getCurrentTemp()).toEqual(20);
+  });
 });
