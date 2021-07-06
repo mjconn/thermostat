@@ -6,6 +6,8 @@ class Thermostat {
     this.MINIMUM_TEMPERATURE = 10;
     this.MAXIMUM_TEMP_PS_ON = 25;
     this.MAXIMUM_TEMP_PS_OFF = 32;
+    this.HIGH_ENERGY_USAGE = 26;
+    this.MEDIUM_ENERGY_USAGE = 18;
   }
 
   getCurrentTemp() {
@@ -51,5 +53,14 @@ class Thermostat {
 
   reset() {
     this.temperature = this.DEFAULT_TEMP;
+  }
+
+  energyUsage() {
+    if(this.temperature < this.MEDIUM_ENERGY_USAGE) {
+      return 'low-usage';
+    } else if (this.temperature < this.HIGH_ENERGY_USAGE) {
+      return 'medium-usage';
+    } 
+      return 'high-usage';
   }
 }
