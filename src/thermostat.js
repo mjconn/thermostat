@@ -64,3 +64,22 @@ class Thermostat {
       return 'high-usage';
   }
 }
+
+function search(city) {
+  let apiKey = "b61c3c1367ef76f46df98ab48f24e246";
+  let unit = ["metric", "imperial"];
+  let apiWeather = "https://api.openweathermap.org/data/2.5/weather";
+  let apiCity = `${apiWeather}?q=${city}&units=${unit[0]}&appid=${apiKey}`;
+  fetch(apiCity).then((response) => {return response.json()}).then((data) => { document.querySelector("#city-temp").innerHTML = Math.round(data.main.temp);});
+  fetch(apiCity).then((response) => {return response.json()}).then((data) => { document.querySelector("#city-name").innerHTML = data.name;});
+}
+
+function getCity(event){
+  event.preventDefault();
+  let selectedCity = document.querySelector("#selected-city").value;
+  search(selectedCity);
+};
+
+let city = document.querySelector("#city");
+city.addEventListener("submit", getCity);
+search("london");
